@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 
-ReactDOM.render(
-  React.createElement('h2',null, 'Hello React'),
+
+
+render(
+  React.createElement('h1',null,"Hello from react"),
   document.getElementById('root')  
 );
