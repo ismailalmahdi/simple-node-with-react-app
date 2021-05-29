@@ -1,0 +1,38 @@
+{
+  "name": "apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "7.x",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.23.2",
+    "nodemon": "^2.0.7",
+    "webpack": "^5.38.0",
+    "webpack-cli": "^4.7.0"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js --ignore public/",
+    "dev": "webpack -wd"
+  },
+  "author": "Ismail Al.Mahdy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ismailalmahdi/simple-node-with-react-app.git"
+  }
+}
