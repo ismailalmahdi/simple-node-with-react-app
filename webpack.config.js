@@ -15,7 +15,7 @@ module.exports = {
         port: 9000
     },
     module: {
-        rules:[
+        rules:[ 
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
@@ -35,8 +35,7 @@ module.exports = {
                     {loader: 'style-loader'},
                     {loader: 'css-loader'}
                 ]
-            }
-            ,
+            },
             {
                 test: /\.(png|jpg|jpeg)$/,
                 use:[

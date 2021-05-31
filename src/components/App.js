@@ -7,7 +7,7 @@ class App extends React.Component {
 
 
     state = {
-        pageHeader : "Name Contests"
+        pageHeader : "Hello there"
     }
 
     componentDidMount(){

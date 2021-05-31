@@ -6,6 +6,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "json-loader": "^0.5.4",
     "mongodb": "^3.6.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
