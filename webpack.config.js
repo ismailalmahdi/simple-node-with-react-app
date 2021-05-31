@@ -7,9 +7,9 @@ module.exports = {
         filename: "main.js",
         path: path.resolve(__dirname,"public")
     },
-    optimization: {
-        minimizer: [ new UglifyJsPlugin()]
-    },
+    // optimization: {
+    //     minimizer: [ new UglifyJsPlugin()]
+    // },
     devServer: {
         contentBase: path.join(__dirname,"public"),
         port: 9000
