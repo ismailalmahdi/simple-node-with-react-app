@@ -1,28 +1,52 @@
 import React from 'react'
 import Header from './Header'
-
-import ContestList from './contestList';
-
+import ContestList from './ContestList';
+import Contest from './Contest';
+import * as api from '../api';
+const pushState = (obj, url) => 
+  window.history.pushState(obj,'',url);
 
 class App extends React.Component {
-
 
     state = {
         pageHeader : "Naming Contests",
         contests: this.props.initialContests
     }
-
-    componentDidMount(){
-    }
-
-    componentWillUnmount(){
-    }
     
+    fetchContest = (contestId) => {
+      
+      pushState(
+        { currentContestId : contestId },
+        `/contests/${contestId}`
+        );
+        
+        api.fetchContest(contestId).then(contest => {
+          this.setState({
+            pageHeader: this.state.contests[contestId].contestName,
+            currentContestId: contest.id,
+            contests:{
+              ...this.state.contests,
+              [contest.id]: contest
+            }
+          });
+        });
+        
+    }
+
+    currentContent(){
+      if (this.state.currentContestId){ 
+        return <Contest {...this.state.contests[this.state.currentContestId]} /> ;
+      }
+      return (<ContestList 
+              onContestClick={this.fetchContest}
+              contests={this.state.contests} />);
+    }
+
     render() {
         return (
           <div className="App">
             <Header message={this.state.pageHeader} /> 
-            <ContestList contests={this.state.contests} />
+            {this.currentContent()}
           </div> 
         )
     }
